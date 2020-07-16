@@ -3,7 +3,7 @@
 <!--From https://codepen.io/frytyler/pen/EGdtg-->
 <head>
   <meta charset="UTF-8">
-  <title>ML API</title>
+  <title>Bengalore House Price</title>
   <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
@@ -11,32 +11,52 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
   
 </head>
-
-<body>
+<style>
+div {
+  height: 50%;
+  width: 400%;
+}
+</style>
+<body><br>
+  &emsp;&emsp;&emsp;&emsp;{{ prediction_text }}
+<h5 style="color:violet;">&emsp;&emsp;&emsp;&emsp;&emsp;                     Predict Bangalore House Price</h5>
+      
  <div class="login">
-  <br>
-   <br>
-   {{ prediction_text }}
-
-	<h1>Predict Bangalore House Price1</h1>
-
-     <!-- Main Input For Receiving Query to our ML -->
+  
+   <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict') }}"method="post">
-    	<input type="number" name="area_type" placeholder="area_type" required="required" />
-        <input type="number" name="availability" placeholder="availability" required="required" />
-		<input type="number" name="location" placeholder="location" required="required" />
-		<input type="number" name="size" placeholder="size" required="required" />
-		<input type="number" name="total_sqft" placeholder="total_sqft" required="required" />
-		<input type="number" name="bath" placeholder="bath" required="required" />
+    	<!-- <input type="number" name="area_type" placeholder="area_type" required="required" /> -->
+     Area Type:
+          <select name="area_type"  style="width: 400px;">
+              <option value="0">Super built-up  Area</option>
+              <option value="1">Built-up  Area</option>
+              <option value="2">Plot  Area</option>
+              <option value="3">Carpet  Area</option>
+          </select>
+      
+        <!-- <input type="number" name="availability" placeholder="availability" required="required" /> -->
+      Availability:
+        <select name="availability" style="width: 400px;">
+              <option value="0">Ready To Move</option>
+              <option value="1">Immediate Possession</option>
+              <option value="2">Not Available</option>
+          </select>
+      
+    Location:<input type="number" name="location" placeholder="location" required="required" />
+    BHK:<input type="number" name="size" placeholder="BHK" required="required" />
+    Total square feet:
+		<input type="number" name="total_sqft" placeholder="Total square feet" required="required" />
+    Bath room:<br>
+		<input type="number" name="bath" placeholder="bathroom" required="required" />
+    Balcony:<br>
 		<input type="number" name="balcony" placeholder="balcony" required="required" />
-		<input type="number" name="price_per_sqft" placeholder="price_per_sqft" required="required" />
+    Price per square feet:<br>
+		<input type="number" name="price_per_sqft" placeholder="price per sqft" required="required" />
 
         <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
     </form>
 
-   
  </div>
-
 
 </body>
 </html>
