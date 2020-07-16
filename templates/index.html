@@ -26,7 +26,7 @@ div {
    <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict') }}"method="post">
     	<!-- <input type="number" name="area_type" placeholder="area_type" required="required" /> -->
-     Area Type:
+     Area Type
           <select name="area_type"  style="width: 400px;">
               <option value="0">Super built-up  Area</option>
               <option value="1">Built-up  Area</option>
@@ -35,22 +35,36 @@ div {
           </select>
       
         <!-- <input type="number" name="availability" placeholder="availability" required="required" /> -->
-      Availability:
+      Availability
         <select name="availability" style="width: 400px;">
               <option value="0">Ready To Move</option>
               <option value="1">Immediate Possession</option>
               <option value="2">Not Available</option>
           </select>
-      
-    Location:<input type="number" name="location" placeholder="location" required="required" />
-    BHK:<input type="number" name="size" placeholder="BHK" required="required" />
-    Total square feet:
+      Location
+        <select name="location" style="width: 400px;">
+              <option value="796">Whitefield</option>
+              <option value="657">Sarjapur  Road</option>
+              <option value="261">Electronic City</option>
+              <option value="422">Kanakpura Road</option>
+              <option value="801">Thanisandra</option>
+              <option value="750">Yelahanka</option>
+              <option value="615">Uttarahalli</option>
+              <option value="727">Hebbal</option>
+              <option value="518">Marathahalli</option>
+              <option value="324">Raja Rajeshwari Nagar</option>
+
+              
+          </select>
+    <!-- Location:<input type="text" name="location" placeholder="location" required="required" /> -->
+    BHK<input type="number" name="size" placeholder="BHK" required="required" />
+    Total square feet
 		<input type="number" name="total_sqft" placeholder="Total square feet" required="required" />
-    Bath room:<br>
+    Bath room<br>
 		<input type="number" name="bath" placeholder="bathroom" required="required" />
-    Balcony:<br>
+    Balcony<br>
 		<input type="number" name="balcony" placeholder="balcony" required="required" />
-    Price per square feet:<br>
+    Price per square feet<br>
 		<input type="number" name="price_per_sqft" placeholder="price per sqft" required="required" />
 
         <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
